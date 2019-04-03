@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "baseUrl": "./",
+    "paths": {
+      "@landing/*": ["./workspaces/landing/*"]
+    }
+  },
+  "resolutions": {
+    "smashing-scripts/eslint-config-smashing-app": "0.2.1"
+  },
+  "include": ["workspaces"],
+  "exclude": ["workspaces/**/webpack.config.js", "workspaces/**/env.config.js"]
+}
