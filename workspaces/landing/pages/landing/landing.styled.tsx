@@ -1,6 +1,7 @@
 import styled, {createGlobalStyle} from 'styled-components'
 import {Heading, Paragraph} from '@smashing/typography'
 import {Button} from '@smashing/button'
+import {TextInput} from '@smashing/text-input'
 
 const Viewport = {
   MobileS: '@media screen and (max-width: 320px)',
@@ -12,7 +13,7 @@ const Viewport = {
 }
 
 const S = {
-  Global: createGlobalStyle`
+  GlobalStyle: createGlobalStyle`
     body {
       border-top: 6px solid ${_ => _.theme.palette.yellow.base};
       padding-top: ${_ => _.theme.spacing.xxl};
@@ -57,7 +58,7 @@ const S = {
   `,
   Demo: styled.img`
     display: none;
-    max-width: 460px;
+    max-width: 492px;
 
     ${Viewport.Tablet} {
       display: block;
@@ -82,7 +83,9 @@ const S = {
         inset 0 -1px 1px 0 rgba(67, 90, 111, 0.3);
     }
   `,
-  NewsletterForm: styled.div`
+  TextInput: styled(TextInput)<{name?: string; autoFocus?: boolean}>``,
+  Button: styled(Button)<{name?: string}>``,
+  NewsletterForm: styled.form`
     display: grid;
     row-gap: ${_ => _.theme.spacing.xxs};
 
