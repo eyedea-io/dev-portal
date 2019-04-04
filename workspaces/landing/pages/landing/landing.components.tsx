@@ -11,6 +11,7 @@ const C = {
         <S.Logo variant={900}>DevPortal</S.Logo>
         <Heading variant={700}>Dashboard for your company</Heading>
         <Paragraph>
+          Get insights into your company projects status, members, released
           features and other project information.
         </Paragraph>
         <S.NewsletterForm
