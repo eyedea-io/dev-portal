@@ -2,7 +2,6 @@
   "name": "dev-portal",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://onespace.dev",
   "dependencies": {
     "@eyedea/syncano-cli-plugin-postman": "0.0.2",
     "@smashing/button": "0.2.1",
