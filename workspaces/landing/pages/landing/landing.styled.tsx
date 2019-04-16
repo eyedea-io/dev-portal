@@ -98,11 +98,15 @@ const S = {
     margin-top: ${_ => _.theme.spacing.xl};
     margin-bottom: 0;
   `,
+  BackedByTitle: styled(Heading)`
+    margin-top: ${_ => _.theme.spacing.xxxl};
+    margin-bottom: 0;
+  `,
   FeaturesGrid: styled.div`
     display: grid;
     margin-top: ${_ => _.theme.spacing.md};
     row-gap: ${_ => _.theme.spacing.md};
-    align-items: center;
+    align-items: flex-start;
 
     > :last-child {
       justify-self: center;
@@ -129,6 +133,18 @@ const S = {
     ${Viewport.Laptop} {
       grid-template-columns: 1fr 1fr 1fr 1fr;
       column-gap: ${_ => _.theme.spacing.md};
+    }
+  `,
+  BackedBy: styled.div`
+    display: grid;
+    margin-top: ${_ => _.theme.spacing.md};
+    column-gap: ${_ => _.theme.spacing.md};
+    row-gap: ${_ => _.theme.spacing.md};
+    align-items: center;
+
+    ${Viewport.MobileL} {
+      grid-auto-flow: column;
+      grid-auto-columns: min-content;
     }
   `,
   Footer: styled.div`

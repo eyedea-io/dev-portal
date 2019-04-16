@@ -1,0 +1,180 @@
+version: 2
+
+setup-env: &setup-env
+  run:
+    name: Setting up env variables
+    command: |
+      if [ "${CIRCLE_BRANCH}" == "master" ]; then
+        cp .env.staging .env.production
+        echo 'export SENTRY_ENV=staging' >> $BASH_ENV
+        env=STAGING
+      else
+        echo 'export SENTRY_ENV=production' >> $BASH_ENV
+        env=PRODUCTION
+      fi
+
+      eval echo 'export SYNCANO_PROJECT_INSTANCE=\$${env}_SYNCANO_PROJECT_INSTANCE' >> $BASH_ENV
+      eval echo 'export SYNCANO_AUTH_KEY=$SYNCANO_AUTH_KEY' >> $BASH_ENV
+
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:11.7.0
+
+jobs:
+  install:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - cache-{{ .Environment.cache }}-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - cache-{{ .Environment.cache }}-dependencies-
+      - run:
+          name: Installing Dependencies
+          command: npm i
+      - save_cache:
+          paths:
+            - node_modules
+          key: cache-{{ .Environment.cache }}-{{ checksum "package.json" }}
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  build-landing:
+    <<: *defaults
+    steps:
+      - checkout
+      - *setup-env
+      - attach_workspace:
+          at: .
+      - run:
+          name: Build landing workspace
+          command: npm run build landing
+      - store_artifacts:
+          path: build/landing
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build/landing
+
+  upload-landing:
+    <<: *defaults
+    steps:
+      - checkout
+      - *setup-env
+      - attach_workspace:
+          at: .
+      - run:
+          name: Uploading landing and setting CNAME
+          command: |
+            npx s hosting sync landing
+            npx s hosting config landing -b true --cname onespace.dev
+
+  upload-staging-landing:
+    <<: *defaults
+    steps:
+      - checkout
+      - *setup-env
+      - attach_workspace:
+          at: .
+      - run:
+          name: Uploading landing and setting CNAME
+          command: |
+            npx s hosting sync landing
+            npx s hosting config landing -b true # --cname YOUR_CNAME
+
+  backup:
+    <<: *defaults
+    steps:
+      - checkout
+      - *setup-env
+      - attach_workspace:
+          at: .
+      - run:
+          name: Create Syncano backup
+          command: npx s backup create
+
+  nofigy-sentry:
+    <<: *defaults
+    steps:
+      - checkout
+      - *setup-env
+      - attach_workspace:
+          at: .
+      - run: echo 'export VERSION=$(npx sentry-cli releases propose-version)' >> $BASH_ENV
+      - run: npx sentry-cli releases new -p winvest $VERSION
+      - run: npx sentry-cli releases set-commits --auto $VERSION
+      - run: npx sentry-cli releases deploys $VERSION new -e $SENTRY_ENV
+
+  deploy-sockets:
+    <<: *defaults
+    steps: &deploy-sockets-steps
+      - checkout
+      - *setup-env
+      - attach_workspace:
+          at: .
+      - run: npx s deploy
+
+  deploy-staging-sockets:
+    <<: *defaults
+    steps: *deploy-sockets-steps
+
+  deploy-postman:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run: npx s postman Winvest
+
+
+workflows:
+  version: 2
+  build-test-deploy:
+    jobs:
+      - install
+      - build-landing:
+          requires:
+            - install
+      - backup:
+          requires:
+            - install
+          filters:
+            branches:
+              only: production
+      - deploy-staging-sockets:
+          requires:
+            - install
+          filters:
+            branches:
+              only: master
+      - upload-staging-landing:
+          requires:
+            - build-landing
+          filters:
+            branches:
+              only: master
+      - deploy-sockets:
+          requires:
+            - backup
+            - test-lint
+            # - test-unit
+          filters:
+            branches:
+              only: production
+      - upload-landing:
+          requires:
+            - deploy-sockets
+            - build-landing
+          filters:
+            branches:
+              only: production
+      - deploy-postman:
+          requires:
+            - deploy-staging-sockets
+      - nofigy-sentry:
+          requires:
+            - deploy-sockets
+            - build-landing

@@ -8,6 +8,8 @@ const Landing = () => (
     <C.Header />
     <S.FeaturesTitle variant={800}>Features</S.FeaturesTitle>
     <C.Features />
+    <S.BackedByTitle variant={800}>Backed by</S.BackedByTitle>
+    <C.BackedBy />
     <C.Footer />
   </S.Wrapper>
 )

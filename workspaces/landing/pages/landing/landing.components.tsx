@@ -3,16 +3,18 @@ import {Heading, Paragraph} from '@smashing/typography'
 import S from './landing.styled'
 import Demo from './images/demo.png'
 import Demo2X from './images/demo@2x.png'
+import {ReactComponent as PionerLabs} from './images/pionerlabs.svg'
+import {ReactComponent as Syncano} from './images/syncano.svg'
 
 const C = {
   Header: () => (
     <S.Header>
       <div>
-        <S.Logo variant={900}>DevPortal</S.Logo>
-        <Heading variant={700}>Dashboard for your company</Heading>
+        <S.Logo variant={900}>OneSpace</S.Logo>
+        <Heading variant={700}>All your projects in one place</Heading>
         <Paragraph>
-          Get insights into your company projects status, members, released
-          features and other project information.
+          Get insights into your projects status, members, released features and
+          other important information.
         </Paragraph>
         <S.NewsletterForm
           method="POST"
@@ -37,7 +39,7 @@ const C = {
               type="text"
               name="b_fde690465aae73bbcc23c44a5_10f01cd192"
               tabIndex={-1}
-              value=""
+              defaultValue=""
             />
           </div>
         </S.NewsletterForm>
@@ -52,71 +54,87 @@ const C = {
   Features: () => (
     <S.FeaturesGrid>
       <div>
-        <Heading variant={500}>Released features</Heading>
+        <Heading variant={500}>Dashboard</Heading>
         <Paragraph>
-          Leverage agile frameworks to provide a robust synopsis for high level
-          overviews. Iterative.
+          All the important information on one screen. Support for big screens.
         </Paragraph>
       </div>
 
       <div>
-        <Heading variant={500}>The Team</Heading>
+        <Heading variant={500}>Integrations</Heading>
         <Paragraph>
-          Leverage agile frameworks to provide a robust synopsis for high level
-          overviews. Iterative.
+          Well integrated with your other tools: Slack, Github, Circle CI,
+          Sentry, Jira and many more.
         </Paragraph>
       </div>
 
       <div>
-        <Heading variant={500}>CI Status</Heading>
+        <Heading variant={500}>Status &amp; Health Checks</Heading>
         <Paragraph>
-          Leverage agile frameworks to provide a robust synopsis for high level
-          overviews. Iterative.
+          Track availability of your service staging and production
+          environments.
         </Paragraph>
       </div>
 
       <div>
-        <Heading variant={500}>Upcoming project meetings</Heading>
+        <Heading variant={500}>Open Source</Heading>
+        <Paragraph>100% open-source. MIT license.</Paragraph>
+      </div>
+
+      <div>
+        <Heading variant={500}>Release notes &amp; Calendar</Heading>
         <Paragraph>
-          Leverage agile frameworks to provide a robust synopsis for high level
-          overviews. Iterative.
+          Human friendly release notes. Connect Google Calendar for full
+          understanding of the timeline.
         </Paragraph>
       </div>
 
       <div>
-        <Heading variant={500}>Project information storage</Heading>
+        <Heading variant={500}>Keys &amp; Passwords</Heading>
         <Paragraph>
-          Leverage agile frameworks to provide a robust synopsis for high level
-          overviews. Iterative.
+          Control the access to the sensitive data from one place. Share it with
+          your team.
         </Paragraph>
       </div>
 
       <div>
-        <Heading variant={500}>Code coverage</Heading>
+        <Heading variant={500}>API Documentation</Heading>
         <Paragraph>
-          Leverage agile frameworks to provide a robust synopsis for high level
-          overviews. Iterative.
+          Interactive playgrounds. Support for Open API, Swagger and GraphQL.
+        </Paragraph>
+      </div>
+      <div>
+        <Heading variant={500}>In the Cloud</Heading>
+        <Paragraph>
+          Don't want to manage your own instance? Cloud hosted OneSpace is for
+          you.
         </Paragraph>
       </div>
 
-      <div>
-        <Heading variant={500}>Performance metrics</Heading>
-        <Paragraph>
-          Leverage agile frameworks to provide a robust synopsis for high level
-          overviews. Iterative.
-        </Paragraph>
-      </div>
-
-      <div>
+      {/* <div>
         <S.DarkButton height={40}>Read more on Medium</S.DarkButton>
-      </div>
+      </div> */}
     </S.FeaturesGrid>
+  ),
+  BackedBy: () => (
+    <S.BackedBy>
+      <a
+        href="https://www.pionerlabs.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <PionerLabs />
+      </a>
+      <a href="https://syncano.io/" target="_blank" rel="noopener noreferrer">
+        <Syncano />
+      </a>
+    </S.BackedBy>
   ),
   Footer: () => (
     <S.Footer>
-      <S.Logo variant={600}>DevPortal</S.Logo>
+      <S.Logo variant={600}>OneSpace</S.Logo>
       <Paragraph color="muted" variant={300}>
-        Made in Bialystok, Poland. &copy; 2019 by EYEDEA.
+        Made in Bialystok and Oslo. &copy; OneSpace 2019
       </Paragraph>
     </S.Footer>
   )

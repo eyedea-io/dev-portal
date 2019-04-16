@@ -1,0 +1,7 @@
+hosting:
+  landing:
+    src: build/landing
+    config:
+      browser_router: true
+plugins:
+  postman: "@eyedea/syncano-cli-plugin-postman"
