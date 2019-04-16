@@ -48,9 +48,9 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - *setup-env
       - attach_workspace:
           at: .
+      - *setup-env
       - run:
           name: Build landing workspace
           command: npm run build landing
@@ -65,9 +65,9 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - *setup-env
       - attach_workspace:
           at: .
+      - *setup-env
       - run:
           name: Uploading landing and setting CNAME
           command: |
@@ -78,9 +78,9 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - *setup-env
       - attach_workspace:
           at: .
+      - *setup-env
       - run:
           name: Uploading landing and setting CNAME
           command: |
@@ -91,9 +91,9 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - *setup-env
       - attach_workspace:
           at: .
+      - *setup-env
       - run:
           name: Create Syncano backup
           command: npx s backup create
@@ -102,9 +102,9 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - *setup-env
       - attach_workspace:
           at: .
+      - *setup-env
       - run: echo 'export VERSION=$(npx sentry-cli releases propose-version)' >> $BASH_ENV
       - run: npx sentry-cli releases new -p winvest $VERSION
       - run: npx sentry-cli releases set-commits --auto $VERSION
@@ -114,9 +114,9 @@ jobs:
     <<: *defaults
     steps: &deploy-sockets-steps
       - checkout
-      - *setup-env
       - attach_workspace:
           at: .
+      - *setup-env
       - run: npx s deploy
 
   deploy-staging-sockets:
