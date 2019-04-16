@@ -170,9 +170,9 @@ workflows:
           filters:
             branches:
               only: production
-      - deploy-postman:
-          requires:
-            - deploy-staging-sockets
+      # - deploy-postman:
+      #     requires:
+      #       - deploy-staging-sockets
       - notify-sentry:
           requires:
             - deploy-sockets
