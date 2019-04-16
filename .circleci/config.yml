@@ -159,8 +159,6 @@ workflows:
       - deploy-sockets:
           requires:
             - backup
-            - test-lint
-            # - test-unit
           filters:
             branches:
               only: production
