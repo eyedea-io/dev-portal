@@ -13,6 +13,7 @@ setup-env: &setup-env
         env=PRODUCTION
       fi
 
+      eval echo 'export SYNCANO_INSTANCE_LOCATION=eu1' >> $BASH_ENV
       eval echo 'export SYNCANO_PROJECT_INSTANCE=\$${env}_SYNCANO_PROJECT_INSTANCE' >> $BASH_ENV
       eval echo 'export SYNCANO_AUTH_KEY=$SYNCANO_AUTH_KEY' >> $BASH_ENV
 
@@ -97,7 +98,7 @@ jobs:
           name: Create Syncano backup
           command: npx s backup create
 
-  nofigy-sentry:
+  notify-sentry:
     <<: *defaults
     steps:
       - checkout
@@ -172,7 +173,7 @@ workflows:
       - deploy-postman:
           requires:
             - deploy-staging-sockets
-      - nofigy-sentry:
+      - notify-sentry:
           requires:
             - deploy-sockets
             - build-landing
