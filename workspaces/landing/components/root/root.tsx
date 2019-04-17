@@ -28,6 +28,17 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
+  @media only screen and (max-width: 600px) {
+    body {
+      padding: 1em;
+    }
+  }
+
+  label {
+    display: block;
+  }
+
+
   main {
     display: block;
   }
@@ -60,6 +71,11 @@ const GlobalStyle = createGlobalStyle`
     font-size: 100%; /* 1 */
     line-height: 1.15; /* 1 */
     margin: 0; /* 2 */
+  }
+
+  input {
+    width: 70%;
+    margin-right: 0.5em;
   }
 
   button,

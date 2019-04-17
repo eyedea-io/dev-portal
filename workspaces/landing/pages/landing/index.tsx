@@ -6,10 +6,14 @@ const Landing = () => (
   <S.Wrapper>
     <S.GlobalStyle />
     <C.Header />
-    <S.FeaturesTitle variant={800}>Features</S.FeaturesTitle>
-    <C.Features />
-    <S.BackedByTitle variant={800}>Backed by</S.BackedByTitle>
-    <C.BackedBy />
+    <section>
+      <S.FeaturesTitle variant={800}>Features</S.FeaturesTitle>
+      <C.Features />
+    </section>
+    <section>
+      <S.BackedByTitle variant={800}>Backed by</S.BackedByTitle>
+      <C.BackedBy />
+    </section>
     <C.Footer />
   </S.Wrapper>
 )

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {Heading, Paragraph} from '@smashing/typography'
+import {Heading, Paragraph, Label} from '@smashing/typography'
 import S from './landing.styled'
 import Demo from './images/demo.png'
 import Demo2X from './images/demo@2x.png'
@@ -10,7 +10,7 @@ const C = {
   Header: () => (
     <S.Header>
       <div>
-        <S.Logo variant={900}>OneSpace</S.Logo>
+        <S.Logo as="h1" variant={900}>OneSpace</S.Logo>
         <Heading variant={700}>All your projects in one place</Heading>
         <Paragraph>
           Get insights into your projects status, members, released features and
@@ -20,27 +20,33 @@ const C = {
           method="POST"
           action="https://eyedea.us20.list-manage.com/subscribe/post?u=fde690465aae73bbcc23c44a5&amp;id=10f01cd192"
           target="_blank"
-        >
-          <S.TextInput
-            autoFocus
-            type="email"
-            placeholder="Your email.."
-            name="EMAIL"
-          />
-          <S.Button intent="warning" name="subscribe">
-            Sign in
-          </S.Button>
-          <input type="hidden" value="1" name="group[1797][1]" />
-          <div
-            style={{position: 'absolute', left: '-5000px'}}
-            aria-hidden="true"
           >
-            <input
-              type="text"
-              name="b_fde690465aae73bbcc23c44a5_10f01cd192"
-              tabIndex={-1}
-              defaultValue=""
-            />
+          <div>
+            <div>
+              <Label htmlFor="email" > Your Email: </Label>
+                <S.TextInput
+                  autoFocus
+                  type="email"
+                  placeholder="example@domain.com"
+                  name="EMAIL"
+                  id="email"
+                />
+              <S.Button intent="warning" name="subscribe">
+                Sign in
+              </S.Button>
+            </div>
+            <input type="hidden" value="1" name="group[1797][1]" />
+            <div
+              style={{position: 'absolute', left: '-5000px'}}
+              aria-hidden="true"
+            >
+              <input
+                type="text"
+                name="b_fde690465aae73bbcc23c44a5_10f01cd192"
+                tabIndex={-1}
+                defaultValue=""
+              />
+              </div>
           </div>
         </S.NewsletterForm>
         <Paragraph color="muted" variant={300}>
@@ -54,14 +60,14 @@ const C = {
   Features: () => (
     <S.FeaturesGrid>
       <div>
-        <Heading variant={500}>Dashboard</Heading>
+        <Heading as="h3" variant={500}>Dashboard</Heading>
         <Paragraph>
           All the important information on one screen. Support for big screens.
         </Paragraph>
       </div>
 
       <div>
-        <Heading variant={500}>Integrations</Heading>
+        <Heading as="h3" variant={500}>Integrations</Heading>
         <Paragraph>
           Well integrated with your other tools: Slack, Github, Circle CI,
           Sentry, Jira and many more.
@@ -69,7 +75,7 @@ const C = {
       </div>
 
       <div>
-        <Heading variant={500}>Status &amp; Health Checks</Heading>
+        <Heading as="h3" variant={500}>Status &amp; Health Checks</Heading>
         <Paragraph>
           Track availability of your service staging and production
           environments.
@@ -77,12 +83,12 @@ const C = {
       </div>
 
       <div>
-        <Heading variant={500}>Open Source</Heading>
+        <Heading as="h3" variant={500}>Open Source</Heading>
         <Paragraph>100% open-source. MIT license.</Paragraph>
       </div>
 
       <div>
-        <Heading variant={500}>Release notes &amp; Calendar</Heading>
+        <Heading as="h3" variant={500}>Release notes &amp; Calendar</Heading>
         <Paragraph>
           Human friendly release notes. Connect Google Calendar for full
           understanding of the timeline.
@@ -90,7 +96,7 @@ const C = {
       </div>
 
       <div>
-        <Heading variant={500}>Keys &amp; Passwords</Heading>
+        <Heading as="h3" variant={500}>Keys &amp; Passwords</Heading>
         <Paragraph>
           Control the access to the sensitive data from one place. Share it with
           your team.
@@ -98,13 +104,14 @@ const C = {
       </div>
 
       <div>
-        <Heading variant={500}>API Documentation</Heading>
+        <Heading as="h3" variant={500}>API Documentation</Heading>
         <Paragraph>
           Interactive playgrounds. Support for Open API, Swagger and GraphQL.
         </Paragraph>
       </div>
+
       <div>
-        <Heading variant={500}>In the Cloud</Heading>
+        <Heading as="h3" variant={500}>In the Cloud</Heading>
         <Paragraph>
           Don't want to manage your own instance? Cloud hosted OneSpace is for
           you.
@@ -132,7 +139,7 @@ const C = {
   ),
   Footer: () => (
     <S.Footer>
-      <S.Logo variant={600}>OneSpace</S.Logo>
+      <S.Logo as="h4" variant={600}>OneSpace</S.Logo>
       <Paragraph color="muted" variant={300}>
         Made in Bialystok and Oslo. &copy; OneSpace 2019
       </Paragraph>
