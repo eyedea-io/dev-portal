@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {Heading, Paragraph} from '@smashing/typography'
+import {Heading, Paragraph, Label} from '@smashing/typography'
 import S from './landing.styled'
 import Demo from './images/demo.png'
 import Demo2X from './images/demo@2x.png'
@@ -10,7 +10,7 @@ const C = {
   Header: () => (
     <S.Header>
       <div>
-        <S.Logo variant={900}>OneSpace</S.Logo>
+        <S.Logo as="h1" variant={900}>OneSpace</S.Logo>
         <Heading variant={700}>All your projects in one place</Heading>
         <Paragraph>
           Get insights into your projects status, members, released features and
@@ -21,12 +21,14 @@ const C = {
           action="https://eyedea.us20.list-manage.com/subscribe/post?u=fde690465aae73bbcc23c44a5&amp;id=10f01cd192"
           target="_blank"
         >
-          <S.TextInput
-            autoFocus
-            type="email"
-            placeholder="Your email.."
-            name="EMAIL"
-          />
+          <Label> Your Email: 
+            <S.TextInput
+              autoFocus
+              type="email"
+              placeholder="example@domain.com"
+              name="EMAIL"
+            />
+          </Label>
           <S.Button intent="warning" name="subscribe">
             Sign in
           </S.Button>
@@ -53,63 +55,64 @@ const C = {
   ),
   Features: () => (
     <S.FeaturesGrid>
-      <div>
-        <Heading variant={500}>Dashboard</Heading>
+      <section>
+        <Heading as="h3" variant={500}>Dashboard</Heading>
         <Paragraph>
           All the important information on one screen. Support for big screens.
         </Paragraph>
-      </div>
+      </section>
 
-      <div>
-        <Heading variant={500}>Integrations</Heading>
+      <section>
+        <Heading as="h3" variant={500}>Integrations</Heading>
         <Paragraph>
           Well integrated with your other tools: Slack, Github, Circle CI,
           Sentry, Jira and many more.
         </Paragraph>
-      </div>
+      </section>
 
-      <div>
-        <Heading variant={500}>Status &amp; Health Checks</Heading>
+      <section>
+        <Heading as="h3" variant={500}>Status &amp; Health Checks</Heading>
         <Paragraph>
           Track availability of your service staging and production
           environments.
         </Paragraph>
-      </div>
+      </section>
 
-      <div>
-        <Heading variant={500}>Open Source</Heading>
+      <section>
+        <Heading as="h3" variant={500}>Open Source</Heading>
         <Paragraph>100% open-source. MIT license.</Paragraph>
-      </div>
+      </section>
 
-      <div>
-        <Heading variant={500}>Release notes &amp; Calendar</Heading>
+      <section>
+        <Heading as="h3" variant={500}>Release notes &amp; Calendar</Heading>
         <Paragraph>
           Human friendly release notes. Connect Google Calendar for full
           understanding of the timeline.
         </Paragraph>
-      </div>
+      </section>
 
-      <div>
-        <Heading variant={500}>Keys &amp; Passwords</Heading>
+      <section>
+        <Heading as="h3" variant={500}>Keys &amp; Passwords</Heading>
         <Paragraph>
           Control the access to the sensitive data from one place. Share it with
           your team.
         </Paragraph>
-      </div>
+      </section>
 
-      <div>
-        <Heading variant={500}>API Documentation</Heading>
+      <section>
+        <Heading as="h3" variant={500}>API Documentation</Heading>
         <Paragraph>
           Interactive playgrounds. Support for Open API, Swagger and GraphQL.
         </Paragraph>
-      </div>
-      <div>
-        <Heading variant={500}>In the Cloud</Heading>
+      </section>
+
+      <section>
+        <Heading as="h3" variant={500}>In the Cloud</Heading>
         <Paragraph>
           Don't want to manage your own instance? Cloud hosted OneSpace is for
           you.
         </Paragraph>
-      </div>
+      </section>
 
       {/* <div>
         <S.DarkButton height={40}>Read more on Medium</S.DarkButton>
@@ -132,7 +135,7 @@ const C = {
   ),
   Footer: () => (
     <S.Footer>
-      <S.Logo variant={600}>OneSpace</S.Logo>
+      <S.Logo as="h1" variant={600}>OneSpace</S.Logo>
       <Paragraph color="muted" variant={300}>
         Made in Bialystok and Oslo. &copy; OneSpace 2019
       </Paragraph>
