@@ -1132,7 +1132,7 @@
   resolved "https://registry.yarnpkg.com/@smashing/text-input/-/text-input-0.1.0.tgz#674643d84d5e94cc1f8208f37e184d96322ea9ab"
   integrity sha512-P6fTjuN1yr/WZ6UIAUdmEevtTPt/0aZR4UpqDsR1WPRfvEW1WH2oXc98Qul9lmNyAvKO6YzJuo2uI1PLwF95Vw==
 
-"@smashing/theme@0.3.1", "@smashing/theme@^0.3.1":
+"@smashing/theme@0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@smashing/theme/-/theme-0.3.1.tgz#7895edfe42ca9088693b362b54137760b5be60c1"
   integrity sha512-JRh1zN5fgdx7M0InDxlDblZjeYEbubtj5Yc1QYaSzzH43vgjc+aFW/RbOpxAjqffTLwlxP9Zpw5kH/iJt26aCg==
@@ -1140,12 +1140,21 @@
     deepmerge "^3.2.0"
     tinycolor2 "^1.4.1"
 
-"@smashing/typography@0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@smashing/typography/-/typography-0.3.1.tgz#25c56b9bff7d0a09c6e5083b6c46ba24ff1af6f8"
-  integrity sha512-jp8/ax5saw7K2PdR4uGnPk1DBWGkeentHUpCci9A9AkFLfZ/ptkDGeMq90vHN58tFO+Uc6hmY5iflfnN47CL7g==
+"@smashing/theme@^0.3.4":
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/@smashing/theme/-/theme-0.3.4.tgz#ca371b4e8a79a74e5afc8988e97c6293761d5f3d"
+  integrity sha512-cj3cmjL/5jJEstVSv/KUxZ7Zl7M6/EW+PyLX/Vyj8UPy72ltRgo8jX4StNdbvgoQhe3unRlsnXWgdjpafLM6+g==
   dependencies:
-    "@smashing/theme" "^0.3.1"
+    deepmerge "^3.2.0"
+    get-value "^3.0.1"
+    tinycolor2 "^1.4.1"
+
+"@smashing/typography@0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@smashing/typography/-/typography-0.4.1.tgz#8f9686b8bd87324a93ab77cf7792279a11042606"
+  integrity sha512-opWli3EnGLMztbqBN5pvHOAYSywEGdGHc8QoLwBL9Z9YDTdTeEKdzHPpfl3q5w6Zg9EE6VsMrpQhTnBkc+bzGQ==
+  dependencies:
+    "@smashing/theme" "^0.3.4"
 
 "@svgr/babel-plugin-add-jsx-attribute@^4.0.0":
   version "4.0.0"
@@ -5205,6 +5214,13 @@ get-value@^2.0.3, get-value@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/get-value/-/get-value-2.0.6.tgz#dc15ca1c672387ca76bd37ac0a395ba2042a2c28"
   integrity sha1-3BXKHGcjh8p2vTesCjlbogQqLCg=
+
+get-value@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/get-value/-/get-value-3.0.1.tgz#5efd2a157f1d6a516d7524e124ac52d0a39ef5a8"
+  integrity sha512-mKZj9JLQrwMBtj5wxi6MH8Z5eSKaERpAwjg43dPtlGI1ZVEgH/qC7T8/6R2OBSUA+zzHBZgICsVJaEIV2tKTDA==
+  dependencies:
+    isobject "^3.0.1"
 
 getpass@^0.1.1:
   version "0.1.7"
