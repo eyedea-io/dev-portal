@@ -35,8 +35,6 @@ const C = {
                 Sign in
               </S.Button>
             </div>
-            <div>
-            </div>
             <input type="hidden" value="1" name="group[1797][1]" />
             <div
               style={{position: 'absolute', left: '-5000px'}}
@@ -61,64 +59,64 @@ const C = {
   ),
   Features: () => (
     <S.FeaturesGrid>
-      <section>
+      <div>
         <Heading as="h3" variant={500}>Dashboard</Heading>
         <Paragraph>
           All the important information on one screen. Support for big screens.
         </Paragraph>
-      </section>
+      </div>
 
-      <section>
+      <div>
         <Heading as="h3" variant={500}>Integrations</Heading>
         <Paragraph>
           Well integrated with your other tools: Slack, Github, Circle CI,
           Sentry, Jira and many more.
         </Paragraph>
-      </section>
+      </div>
 
-      <section>
+      <div>
         <Heading as="h3" variant={500}>Status &amp; Health Checks</Heading>
         <Paragraph>
           Track availability of your service staging and production
           environments.
         </Paragraph>
-      </section>
+      </div>
 
-      <section>
+      <div>
         <Heading as="h3" variant={500}>Open Source</Heading>
         <Paragraph>100% open-source. MIT license.</Paragraph>
-      </section>
+      </div>
 
-      <section>
+      <div>
         <Heading as="h3" variant={500}>Release notes &amp; Calendar</Heading>
         <Paragraph>
           Human friendly release notes. Connect Google Calendar for full
           understanding of the timeline.
         </Paragraph>
-      </section>
+      </div>
 
-      <section>
+      <div>
         <Heading as="h3" variant={500}>Keys &amp; Passwords</Heading>
         <Paragraph>
           Control the access to the sensitive data from one place. Share it with
           your team.
         </Paragraph>
-      </section>
+      </div>
 
-      <section>
+      <div>
         <Heading as="h3" variant={500}>API Documentation</Heading>
         <Paragraph>
           Interactive playgrounds. Support for Open API, Swagger and GraphQL.
         </Paragraph>
-      </section>
+      </div>
 
-      <section>
+      <div>
         <Heading as="h3" variant={500}>In the Cloud</Heading>
         <Paragraph>
           Don't want to manage your own instance? Cloud hosted OneSpace is for
           you.
         </Paragraph>
-      </section>
+      </div>
 
       {/* <div>
         <S.DarkButton height={40}>Read more on Medium</S.DarkButton>
