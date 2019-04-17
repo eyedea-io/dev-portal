@@ -23,19 +23,19 @@ const C = {
           >
           <div>
             <div>
-            <Label htmlFor="email" > Your Email: </Label>
+              <Label htmlFor="email" > Your Email: </Label>
+                <S.TextInput
+                  autoFocus
+                  type="email"
+                  placeholder="example@domain.com"
+                  name="EMAIL"
+                  id="email"
+                />
+              <S.Button intent="warning" name="subscribe">
+                Sign in
+              </S.Button>
             </div>
             <div>
-              <S.TextInput
-                autoFocus
-                type="email"
-                placeholder="example@domain.com"
-                name="EMAIL"
-                id="email"
-              />
-            <S.Button intent="warning" name="subscribe">
-              Sign in
-            </S.Button>
             </div>
             <input type="hidden" value="1" name="group[1797][1]" />
             <div
