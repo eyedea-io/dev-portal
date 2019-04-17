@@ -20,29 +20,35 @@ const C = {
           method="POST"
           action="https://eyedea.us20.list-manage.com/subscribe/post?u=fde690465aae73bbcc23c44a5&amp;id=10f01cd192"
           target="_blank"
-        >
-          <Label> Your Email: 
-            <S.TextInput
-              autoFocus
-              type="email"
-              placeholder="example@domain.com"
-              name="EMAIL"
-            />
-          </Label>
-          <S.Button intent="warning" name="subscribe">
-            Sign in
-          </S.Button>
-          <input type="hidden" value="1" name="group[1797][1]" />
-          <div
-            style={{position: 'absolute', left: '-5000px'}}
-            aria-hidden="true"
           >
-            <input
-              type="text"
-              name="b_fde690465aae73bbcc23c44a5_10f01cd192"
-              tabIndex={-1}
-              defaultValue=""
-            />
+          <div>
+            <div>
+            <Label htmlFor="email" > Your Email: </Label>
+            </div>
+            <div>
+              <S.TextInput
+                autoFocus
+                type="email"
+                placeholder="example@domain.com"
+                name="EMAIL"
+                id="email"
+              />
+            <S.Button intent="warning" name="subscribe">
+              Sign in
+            </S.Button>
+            </div>
+            <input type="hidden" value="1" name="group[1797][1]" />
+            <div
+              style={{position: 'absolute', left: '-5000px'}}
+              aria-hidden="true"
+            >
+              <input
+                type="text"
+                name="b_fde690465aae73bbcc23c44a5_10f01cd192"
+                tabIndex={-1}
+                defaultValue=""
+              />
+              </div>
           </div>
         </S.NewsletterForm>
         <Paragraph color="muted" variant={300}>
@@ -135,7 +141,7 @@ const C = {
   ),
   Footer: () => (
     <S.Footer>
-      <S.Logo as="h1" variant={600}>OneSpace</S.Logo>
+      <S.Logo as="h4" variant={600}>OneSpace</S.Logo>
       <Paragraph color="muted" variant={300}>
         Made in Bialystok and Oslo. &copy; OneSpace 2019
       </Paragraph>

@@ -1122,25 +1122,17 @@
   dependencies:
     "@sentry/cli" "^1.35.5"
 
-"@smashing/button@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@smashing/button/-/button-0.2.1.tgz#db783f229cbf09e022167a6c2a6e175af21b871f"
-  integrity sha512-jzwNWuN+j7Gcz+15aMEUCjFejUn3mA0q0TUTOMB7iJ5y0wjPF+ak5PeyExJYnAOotKWKIUNrP8Jx3ar4xuMjvg==
+"@smashing/button@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@smashing/button/-/button-0.2.2.tgz#5533630062247a9bb381331f2db4de80e95d956d"
+  integrity sha512-M7Xs0YvOzmxypvaqzehCCoknCGfGJeTyQR8tYntTI0idzicIH1zEDIzyeB5YamUwOor4ZEH1dR8jWwPwzpT6/A==
 
-"@smashing/text-input@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@smashing/text-input/-/text-input-0.1.0.tgz#674643d84d5e94cc1f8208f37e184d96322ea9ab"
-  integrity sha512-P6fTjuN1yr/WZ6UIAUdmEevtTPt/0aZR4UpqDsR1WPRfvEW1WH2oXc98Qul9lmNyAvKO6YzJuo2uI1PLwF95Vw==
+"@smashing/text-input@0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@smashing/text-input/-/text-input-0.1.4.tgz#c04d633502f99fbaef8680b101471b52c35bdbc4"
+  integrity sha512-/vWnkimb+Imr44tGOA2J5mYG5yp/hwra03jHjKFtPS3zyuURW2IYqOeJ/Lnzb7HZuR+col48kj4fwexaxClO7Q==
 
-"@smashing/theme@0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@smashing/theme/-/theme-0.3.1.tgz#7895edfe42ca9088693b362b54137760b5be60c1"
-  integrity sha512-JRh1zN5fgdx7M0InDxlDblZjeYEbubtj5Yc1QYaSzzH43vgjc+aFW/RbOpxAjqffTLwlxP9Zpw5kH/iJt26aCg==
-  dependencies:
-    deepmerge "^3.2.0"
-    tinycolor2 "^1.4.1"
-
-"@smashing/theme@^0.3.4":
+"@smashing/theme@0.3.4", "@smashing/theme@^0.3.4":
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/@smashing/theme/-/theme-0.3.4.tgz#ca371b4e8a79a74e5afc8988e97c6293761d5f3d"
   integrity sha512-cj3cmjL/5jJEstVSv/KUxZ7Zl7M6/EW+PyLX/Vyj8UPy72ltRgo8jX4StNdbvgoQhe3unRlsnXWgdjpafLM6+g==

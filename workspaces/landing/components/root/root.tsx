@@ -28,6 +28,12 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
+  @media only screen and (max-width: 600px) {
+    body {
+      padding: 1em;
+    }
+  }
+
   main {
     display: block;
   }
